@@ -1,0 +1,43 @@
+module.exports = (sequelize,Sequelize)=>{
+    const Users = sequelize.define("users",{
+        id:{
+            type:Sequelize.INTEGER,
+            primaryKey:true,
+            autoIncrement:true
+        },
+        firstName:{
+            type:Sequelize.STRING,
+            field:'first_name'
+        },
+        lastName:{
+            type:Sequelize.STRING,
+            field:'last_name'
+        },
+        email:{
+            type:Sequelize.STRING,
+        },
+        phoneNumber:{
+            type:Sequelize.INTEGER,
+            field:'phone_number'
+        },
+        password:{
+            type:Sequelize.STRING
+        },
+        dateOfBirth:{
+            type:Sequelize.DATE,
+            field:'d_o_b'
+        },
+        createdAt:{
+            type:Sequelize.DATE,
+            field:'created_at'
+        },
+        updatedAt:{
+            type:Sequelize.DATE,
+            field:'updated_at'
+        }
+    },{
+        tableName:'users',
+        timeStamps:true
+    });
+    return Users;
+}
